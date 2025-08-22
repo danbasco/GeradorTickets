@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+body {
+    font-family: 'Inconsolata', monospace, Arial, Helvetica, sans-serif;
+    color: #fff;
+    background-image: url('../assets/images/background-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+
+/* Background para mobile */
+@media (max-width: 600px) {
+    body {
+        background-image: url('../assets/images/background-mobile.png');
+    }
+}
+/* Header alinhado lado a lado */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.header img {
+    height: 48px;
+    width: auto;
+}

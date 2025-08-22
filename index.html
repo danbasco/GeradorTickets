@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Tickets</title>
+</head>
+
+<body>
+    
+    <div class="header">
+        <img src="assets/images/logo-mark.svg" alt="Logo Coding Conf">
+        <h2>Coding Conf</h2>
+    </div>
+
+    <h1>Your jorney to Coding Conf 2025<br> Starts Here!</h1>
+    <p>Secure your spot at next year's biggest coding conference.</p>
+    
+    <!-- Envio de Avatar 
+
+    <div class="avatar">
+        <img src="img/avatar.png" alt="Avatar">
+        <p>Upload your avatar</p>
+        <input type="file" id="avatarInput" accept="image/*">
+    </div>
+
+-->
+
+    <form id="ticketForm">
+
+        <!-- Nome -->
+        <label for ="fullName">Full Name</label><br>
+        <input type="text" id="fullName" name="fullName" required><br>
+
+        <!-- Email -->
+        <label for ="email">Email Adress</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <!-- GitHub Username -->
+        <label for ="githubUsername">GitHub Username</label><br>
+        <input type="text" id="githubUsername" name="githubUsername" required><br>
+
+    </form>
+
+    <button id="getTicket">Generate My Ticket</button>
+
+</body>
+</html>
