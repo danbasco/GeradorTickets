@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../assets/fonts/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../assets/images/pattern-lines.svg') center center no-repeat;
+    background-size: contain; /* or cover, as desired */
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5; /* ajuste a opacidade se quiser */
+
+}
+body {
+
+    position: relative;
+    z-index: 1;
+
+    font-family: 'Inconsolata', monospace, Arial, Helvetica, sans-serif;
+    color: #fff;
+    background-image: url('../assets/images/background-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+
+/* Background for mobile */
+@media (max-width: 600px) {
+    body {
+        background-image: url('../assets/images/background-mobile.png');
+    }
+}
+/* Header aligned side by side */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.header img {
+    height: 48px;
+    width: auto;
+}
+
+.textTicket {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.1); /* internal opacity */
+    border: 1px solid rgba(204,204,204,0.8); /* more visible border */
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace, Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 15px;
+}   
+
+#getTicket {
+    background-color: #F67464;
+    color: #280016;
+    padding: 15px 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: Inconsolata, monospace, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
