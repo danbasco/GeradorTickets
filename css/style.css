@@ -1,3 +1,6 @@
+    /* Importando a fonte */
+
+
 @font-face {
     font-family: 'Inconsolata';
     src: url('../assets/fonts/Inconsolata-VariableFont_wdth-wght.ttf') format('truetype');
@@ -6,68 +9,118 @@
     
 }
 
+/* Corpo principal da página */
+
 body::before {
+
     content: "";
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background: url('../assets/images/pattern-lines.svg') center center no-repeat;
-    background-size: contain; /* or cover, as desired */
+    background-size: contain; 
     z-index: 0;
     pointer-events: none;
-    opacity: 0.5; /* ajuste a opacidade se quiser */
+    opacity: 1.0; 
 
 }
+
 body {
 
     position: relative;
     z-index: 1;
 
-    font-family: 'Inconsolata', monospace, Arial, Helvetica, sans-serif;
+    font-family: 'Inconsolata', monospace, Arial, sans-serif;
     color: #fff;
     background-image: url('../assets/images/background-desktop.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
-}
+
+    text-align: center;
     
 
-/* Background for mobile */
+}
+    
+/* Background para mobile */
 @media (max-width: 600px) {
     body {
         background-image: url('../assets/images/background-mobile.png');
     }
 }
-/* Header aligned side by side */
-.header {
+
+
+/* Logo */
+
+.mainLogo {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
 }
 
-.header img {
-    height: 48px;
+.mainLogo img {
+    height: 20px;
     width: auto;
 }
 
-.textTicket {
+
+.textP {
+    margin-bottom: 2em;
+}
+
+
+
+/* Campos para preencher os dados */ 
+
+#ticketForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ticketForm label {
+    display: block;
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+#ticketForm input {
+
     width: 100%;
     max-width: 400px;
     padding: 15px;
     border-radius: 10px;
-    background-color: rgba(255,255,255,0.1); /* internal opacity */
-    border: 1px solid rgba(204,204,204,0.8); /* more visible border */
+    background-color: rgba(255,255,255,0.1); 
+    border: 1px solid rgba(204,204,204,0.8); 
     box-sizing: border-box;
     font-family: 'Inconsolata', monospace, Arial, Helvetica, sans-serif;
     color: #fff;
     font-size: 15px;
     margin-bottom: 15px;
-}   
+    margin-top: 0;
+
+}
+
+#ticketForm input:hover{
+    background-color: rgba(255,255,255,0.2); 
+    border-color: rgba(204,204,204,1); 
+}
+
+/* Botão */
+
 
 #getTicket {
+    
     background-color: #F67464;
     color: #280016;
     padding: 15px 120px;
@@ -80,4 +133,8 @@ body {
     border-radius: 15px;
     font-family: Inconsolata, monospace, Arial, Helvetica, sans-serif;
     font-weight: bold;
+}
+
+#getTicket:hover {
+    background-color: #FF8A8A;
 }
