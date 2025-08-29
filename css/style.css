@@ -1,4 +1,4 @@
-    /* Importando a fonte */
+/* Importando a fonte */
 
 
 @font-face {
@@ -8,7 +8,6 @@
     font-style: normal;
     
 }
-
 /* Corpo principal da página */
 
 body::before {
@@ -16,18 +15,19 @@ body::before {
     content: "";
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: url('../assets/images/pattern-lines.svg') center center no-repeat;
-    background-size: contain; 
-    z-index: 0;
+    background-image:
+        url('../assets/images/pattern-lines.svg'),
+        url('../assets/images/pattern-squiggly-line-bottom-desktop.svg');
+    background-repeat: repeat, no-repeat;
+    background-position: center center, 0% 100%;
+    background-size: contain, auto;
+    z-index: -10;
     pointer-events: none;
     opacity: 1.0; 
 
 }
 
 body {
-
-    position: relative;
-    z-index: 1;
 
     font-family: 'Inconsolata', monospace, Arial, sans-serif;
     color: #fff;
@@ -38,20 +38,53 @@ body {
     min-height: 100vh;
     margin: 0 auto;
     padding: 0;
-    box-sizing: border-box;
-
-    text-align: center;
-    
+    box-sizing: border-box;   
 
 }
-    
-/* Background para mobile */
+
+/* Responsividade para mobile */
 @media (max-width: 600px) {
+
+    body::before {
+        background-image: url('../assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg')0% 100%;
+    }
+
     body {
         background-image: url('../assets/images/background-mobile.png');
+        font-size: 15px;
+        padding: 0;
+    }
+    #ticketForm, .avatar-upload-container {
+        max-width: 98vw;
+        width: 100%;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        box-sizing: border-box;
+    }
+    .mainLogo img {
+        height: 28px;
+    }
+    #ticketForm, .avatar-upload-container {
+        max-width: 98vw;
+        width: 100%;
+    }
+    #ticketForm label, .textTicket, #ticketForm input, #getTicket {
+        max-width: 98vw;
+        font-size: 15px;
+    }
+    .avatar-upload-box {
+        min-height: 80px;
+        padding: 10px 0 5px 0;
+    }
+    .avatar-preview {
+        width: 48px;
+        height: 48px;
+    }
+    #getTicket {
+        padding: 12px 0;
+        font-size: 16px;
     }
 }
-
 
 /* Logo */
 
@@ -70,29 +103,136 @@ body {
     width: auto;
 }
 
+/* Avatar */
+
+.upload-icon-container {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    max-width: 50px;
+    background: rgb(255, 255, 255, 0.2);
+    border: 1px solid rgb(255, 255, 255, 0.4);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.upload-icon-preview {
+    width: 100%;
+    max-width: 30px;
+    margin: 0 auto 0 auto;
+
+}
+
+.avatar-upload-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.avatar-label {
+    font-size: 1.2em;
+    font-weight:lighter;
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+
+.avatar-upload-box {
+    width: 100%;
+    min-height: 80px;
+    background: rgba(255,255,255,0.05);
+    border: 1px dashed rgb(170, 170, 170, 0.8);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 10px 0;
+    margin-bottom: 8px;
+    position: relative;
+    cursor: pointer;
+
+    transition: background-color 0.25s;
+}
+
+.avatar-upload-box:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.avatar-upload-box span {
+    color: #ccc;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+.avatar-preview {
+    width: 64px;
+    height: 64px;
+    border-radius: 18%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    background: #222;
+    border: 1px solid rgb(205, 203, 203, 0.7);
+}
+
+.avatar-btns {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.avatar-btn {
+    background: rgb(69, 69, 69, 0.6);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.avatar-btn:hover {
+    background: rgb(246, 116, 100, 0.7);
+    color: #280016;
+}
+
+.avatar-hint {
+    color: #ccc;
+    font-size: 0.95em;
+    margin-left: 8px;
+}
+
+h1 {
+    text-align: center;
+}
 
 .textP {
     margin-bottom: 2em;
+    text-align: center;
 }
-
 
 
 /* Campos para preencher os dados */ 
 
 #ticketForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
 }
 
+
 #ticketForm label {
-    display: block;
+   
     text-align: left;
     width: 100%;
     max-width: 400px;
-    margin-left: 8px;
-    font-weight: bold;
+    font-weight: lighter;
+    font-size: 0.8em;
+    
 }
+
 
 #ticketForm input {
 
@@ -107,34 +247,42 @@ body {
     color: #fff;
     font-size: 15px;
     margin-bottom: 15px;
-    margin-top: 0;
+    margin-top: 5px;
+
+    transition: background-color 0.25s;
 
 }
 
 #ticketForm input:hover{
-    background-color: rgba(255,255,255,0.2); 
+    background-color: rgba(255,255,255,0.15); 
     border-color: rgba(204,204,204,1); 
 }
 
+
 /* Botão */
 
-
 #getTicket {
-    
+    width: 100%;
+    max-width: 400px;
     background-color: #F67464;
     color: #280016;
-    padding: 15px 120px;
+    padding: 15px 0;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 20px 2px;
+    display: block;
+    font-size: 20px;
+    margin: 20px auto 0 auto;
     cursor: pointer;
     border-radius: 15px;
     font-family: Inconsolata, monospace, Arial, Helvetica, sans-serif;
     font-weight: bold;
+    margin-bottom: 100px;
 }
 
 #getTicket:hover {
     background-color: #FF8A8A;
+}
+
+span {
+    font-size: 12px;
 }
