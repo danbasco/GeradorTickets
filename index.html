@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Tickets</title>
+    <title>Coding Conf 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
 </head>
-
 <body>
     
-    <div class="mainLogo">
-
+    <header class="mainLogo">
         <img src="assets/images/logo-mark.svg" alt="Logo Coding Conf">
         <h3>Coding Conf</h3>
+    </header>
 
-    </div>
+    <main>
+        <h1>Your Journey to Coding Conf<br>2025 Starts Here!</h1>
+        <p class="textP">Secure your spot at next year's biggest coding conference.</p>
+        
+        <div class="avatar-upload-container">
+            <label class="avatar-label">Upload Avatar</label>
+            
+            <!-- Bloco de Upload Inicial -->
+            <div class="avatar-upload-box" id="uploadInicial">
+                <div class="upload-icon-container">
+                    <img id="uploadIcon" class="upload-icon-preview" src="assets/images/icon-upload.svg" alt="Upload Icon">
+                </div>
+                <span>Drag and drop or click to upload</span>
+            </div>
 
-    <h1>Your Journey to Coding Conf<br>2025 Starts Here!</h1>
-    <p class="textP">Secure your spot at next year's biggest coding conference.</p>
-    
+            <!-- Bloco de Atualização do Avatar (começa oculto) -->
+            <div class="avatar-upload-box" id="atualizarAvatar" style="display: none;">
+                <img id="avatarPreview" class="avatar-preview" src="assets/images/image-avatar.jpg" alt="Avatar Preview">
+                <div class="avatar-btns">
+                    <button type="button" id="removeAvatar" class="avatar-btn">Remove image</button>
+                    <button type="button" id="changeAvatar" class="avatar-btn">Change image</button>
+                </div>
+            </div> 
+            
+            <div class="avatar-hint">
+                <span>&#9432; Upload your photo (JPG or PNG, max size: 5MB).</span>
+            </div>
+        </div>
 
-    <form id="ticketForm">
+        <!-- Input de arquivo único, fora dos blocos para ser acessível por ambos -->
+        <input type="file" id="avatarInput" accept="image/png, image/jpeg" style="display:none;">
 
-        <!-- Nome -->
-        <label for ="fullName">Full Name</label><br>
-        <input type="text" id="fullName" name="fullName" class="textTicket" required><br>
+        <form id="ticketForm">
+            <!-- Nome -->
+            <label for="fullName">Full Name</label><br>
+            <input type="text" id="fullName" name="fullName" class="textTicket" required><br>
 
-        <!-- Email -->
-        <label for ="email">Email Adress</label><br>
-        <input type="email" id="email" name="email" class="textTicket" required><br>
+            <!-- Email -->
+            <label for="email">Email Address</label><br>
+            <input type="email" id="email" name="email" class="textTicket" required><br>
 
-        <!-- GitHub Username -->
-        <label for ="githubUsername">GitHub Username</label><br>
-        <input type="text" id="githubUsername" name="githubUsername" class="textTicket" required><br>
+            <!-- GitHub Username -->
+            <label for="githubUsername">GitHub Username</label><br>
+            <input type="text" id="githubUsername" name="githubUsername" class="textTicket" required><br>
 
-        <button id="getTicket">Generate My Ticket</button>
-
-    </form>
+            <button type="submit" id="getTicket">Generate My Ticket</button>
+        </form>
+    </main>
 
     <script src="js/main.js"></script>
-
 </body>
 </html>
