@@ -277,6 +277,7 @@ h1 {
     font-family: Inconsolata, monospace, Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-bottom: 100px;
+    border-style: none;
 }
 
 #getTicket:hover {
@@ -285,4 +286,87 @@ h1 {
 
 span {
     font-size: 12px;
+}
+
+.email-container {
+    color: rgb(197, 197, 197);
+    text-align: center;
+}
+
+#emailName {
+    color: #FF8A8A;
+    font-size: 1em;
+}
+
+#ticketName {
+    
+    color: #F67464;
+    background-image: linear-gradient(to right, #F67464, #FF8A8A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1em; 
+}
+
+
+/* --- Estilos da Página do Ticket --- */
+
+.ticket-container {
+
+    max-width: 500px; 
+    width: 90%;       
+    margin: 5em auto; 
+    position: relative; 
+
+}
+
+.ticket-container > img {
+
+    width: 100%;     
+    height: auto;     
+}
+
+.ticket-content {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.1em 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ticket-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+
+}
+
+.ticket-header img {
+    height: 20px;
+    width: auto;
+}
+
+.ticket-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.github-link {
+    display: flex;
+    align-items: center;
+}
+
+#ticketAvatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
 }

@@ -7,15 +7,48 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1> Congrats, Your ticket is ready</h1>
 
-    <div class="ticket-container">
-        <img class="avatar-preview" id="avatarTicket" src="../assets/images/image-avatar.jpg" alt="Avatar Preview">
-    </div>
+    <header class="mainLogo">
+        <img src="../assets/images/logo-mark.svg" alt="Logo Coding Conf">
+        <h3>Coding Conf</h3>
+    </header>
 
+    <main>
+        <h1> Congrats, <span id="ticketName">name</span>! <br>Your ticket is ready.</h1>
 
-    
-    <script src="../js/main.js"></script>
+        <div class="email-container">
+            <p>We've emailed your ticket to<br><span id="emailName">emailName</span> and will send updates in<br>the run up to the event.</p>
+        </div>
+
+        <div class="ticket-container">
+            <img src="../assets/images/pattern-ticket.svg" alt="Ticket Container">
+            <div class="ticket-content">
+
+                <div class="ticket-top">
+                    <div class="ticket-header">
+                        <img src="../assets/images/logo-mark.svg" alt="Logo">
+                        <h3>Coding Conf</h3>
+                    </div>
+                    <p class="ticket-details" id="ticketDetails">Jan 31, 2025 / Austin, TX</p>
+                </div>
+
+                <div class="ticket-user">
+                    <img id="ticketAvatar" src="../assets/images/image-avatar.jpg" alt="User Avatar">
+
+                    <div class="user-info">
+                        <h3 id="ticket-fullName">Name</h3>
+                        <p class="github-link">
+                                <img src="../assets/images/icon-github.svg" alt="Github Icon">
+                                <span id="githubUsername">@username</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </main>
+
+    <script src="../js/ticket.js"></script>
 
 </body>
 </html>
