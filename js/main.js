@@ -138,5 +138,97 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ticketForm) {
         ticketForm.addEventListener('submit', handleFormSubmit);
     }
+
+    /*
+    ================================================================================
+    == EXEMPLOS EDUCATIVOS: VALIDAÇÕES E ERROS ==
+    ================================================================================
+
+    // --------------------------------------------------------------------------------
+    // PERGUNTA: Como altero para validar que a pessoa escreveu apenas o primeiro nome (sem regex)?
+    // --------------------------------------------------------------------------------
+    // const isFirstNameOnly = (name) => {
+    //     const n = (name || '').trim();
+    //     return n.length > 0 && !n.includes(' ');
+    // };
+
+    // --------------------------------------------------------------------------------
+    // PERGUNTA: Como altero para validar que escreveu nome e sobrenome (considerando que utilize apenas um campo de input para isso e sem regex)?
+    // --------------------------------------------------------------------------------
+    // const isFullName = (name) => {
+    //     const parts = (name || '').trim().split(' ').filter(Boolean);
+    //     return parts.length >= 2;
+    // };
+
+    // --------------------------------------------------------------------------------
+    // PERGUNTA: Como posso alterar minha página para mover a validação de erro para que ela seja apresentada de uma forma diferente?
+    // --------------------------------------------------------------------------------
+
+    // // A validação aparecer em vermelho, abaixo do campo de input (diretamente na página).
+    // const showErrorBelow = (inputEl, message) => {
+    //     const errorDiv = document.createElement('div');
+    //     errorDiv.className = 'field-error-message';
+    //     errorDiv.style.color = '#ff5252';
+    //     errorDiv.style.marginTop = '4px';
+    //     errorDiv.textContent = message;
+    //     inputEl.insertAdjacentElement('afterend', errorDiv);
+    // };
+
+    // // A validação aparecer em vermelho, acima do campo de input (diretamente na página).
+    // const showErrorAbove = (inputEl, message) => {
+    //     const errorDiv = document.createElement('div');
+    //     errorDiv.className = 'field-error-message';
+    //     errorDiv.style.color = '#ff5252';
+    //     errorDiv.style.marginBottom = '4px';
+    //     errorDiv.textContent = message;
+    //     inputEl.insertAdjacentElement('beforebegin', errorDiv);
+    // };
+
+    // // A validação aparecer como um alert().
+    // const showErrorAsAlert = (message) => {
+    //     alert(message);
+    // };
+
+    // // A validação aparecer como um toast no canto superior direito da página.
+    // // Requer biblioteca externa, ex: Toastify.js
+    // // HTML: <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    // const showErrorAsToast = (message) => {
+    //     if (window.Toastify) {
+    //         Toastify({ text: message, duration: 3000, gravity: "top", position: "right" }).showToast();
+    //     } else {
+    //         alert(message); // Fallback
+    //     }
+    // };
+
+    // --------------------------------------------------------------------------------
+    // PERGUNTA: Como altero para validar que o usuário escreveu o "@" do GitHub?
+    // --------------------------------------------------------------------------------
+    // const githubUsernameValue = document.getElementById('githubUsername').value;
+    // if (!githubUsernameValue.startsWith('@')) {
+    //     // Exibiria erro aqui
+    // }
+
+    // --------------------------------------------------------------------------------
+    // PERGUNTA: Como altero para validar que o usuário não escreveu o "@" do GitHub, e o adicionarmos automaticamente?
+    // --------------------------------------------------------------------------------
+    // let githubHandle = document.getElementById('githubUsername').value;
+    // if (!githubHandle.startsWith('@')) {
+    //     githubHandle = '@' + githubHandle;
+    // }
+
+    // --------------------------------------------------------------------------------
+    // PERGUNTA: Como altero para, independente de se o usuário escreveu o "@" do GitHub ou não, ele ser apresentado e não aparecer duplicado?
+    // --------------------------------------------------------------------------------
+    // const normalizeGithubUsername = (rawUsername) => {
+    //     const username = (rawUsername || '').trim();
+    //     const cleanUsername = username.startsWith('@') ? username.slice(1) : username;
+    //     return cleanUsername;
+    // };
+    // // Uso:
+    // // const cleanGithub = normalizeGithubUsername(github_input_value);
+    // // Para salvar: localStorage.setItem('github', cleanGithub);
+    // // Para exibir: '@' + localStorage.getItem('github');
+
+    */
 });
 
