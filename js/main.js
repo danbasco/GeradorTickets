@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
 
         // Redireciona para a página do ticket
-        window.location.href = '../pages/ticket.html';
+    window.location.href = 'pages/ticket.html';
     };
 
     // --- Event Listeners ---
@@ -102,6 +102,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ação ao selecionar um arquivo
     if (avatarInput) {
         avatarInput.addEventListener('change', handleAvatarChange);
+    }
+
+    // --- Drag and Drop Events ---
+    if (uploadInicialContainer) {
+        // Adiciona um feedback visual quando um arquivo é arrastado sobre o container
+        uploadInicialContainer.addEventListener('dragover', (event) => {
+            event.preventDefault(); // Previne o comportamento padrão
+            uploadInicialContainer.style.borderColor = '#8844ee'; // Muda a cor da borda para indicar uma área válida
+        });
+
+        // Remove o feedback visual quando o arquivo sai da área
+        uploadInicialContainer.addEventListener('dragleave', () => {
+            uploadInicialContainer.style.borderColor = ''; // Restaura a cor original da borda
+        });
+
+        // Lida com o arquivo quando ele é solto na área
+        uploadInicialContainer.addEventListener('drop', (event) => {
+            event.preventDefault(); // Previne que o navegador abra o arquivo
+            uploadInicialContainer.style.borderColor = ''; // Restaura a cor da borda
+
+            const files = event.dataTransfer.files;
+            if (files.length > 0) {
+                // Coloca o arquivo solto no nosso input de arquivo
+                avatarInput.files = files;
+                
+                // Dispara o evento 'change' no input manualmente para reusar a lógica existente
+                const changeEvent = new Event('change', { bubbles: true });
+                avatarInput.dispatchEvent(changeEvent);
+            }
+        });
     }
 
     // Ação de submeter o formulário
